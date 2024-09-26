@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import { useTaskContext } from "../context/TaskContext";
 
-export const TodoInput = ({
-  todo,
-  setTodo,
-  addTask,
-  edit,
-  handleSave,
-  handleCancel,
-}) => {
+export const TodoInput = () => {
+  const { todo, setTodo, addTask, edit, handleSave, handleCancel } =
+    useTaskContext();
+
   return (
     <div className="flex gap-3 w-[43%] relative max-xl:w-[60%] max-lg:w-[70%] max-md:w-[96%] justify-center mt-4 items-center pb-6">
       <textarea

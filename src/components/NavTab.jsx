@@ -1,6 +1,9 @@
-import React from 'react'
+import React from "react";
+import { useTaskContext } from "../context/TaskContext";
 
-export const NavTab = ({ activeTab, setActiveTab }) => {
+export const NavTab = () => {
+  const { activeTab, setActiveTab } = useTaskContext();
+
   const tabs = [
     { label: "Toutes", value: "all" },
     { label: " En attentes", value: "non_demarré" },
@@ -14,7 +17,11 @@ export const NavTab = ({ activeTab, setActiveTab }) => {
       {tabs.map((tab) => (
         <button
           key={tab.value}
-          className={`px-4 py-2 rounded-lg hover:bg-bl hover:text-blc font-sans font-semibold max-sm:text-xs max-sm:px-2 ${activeTab === tab.value ? "bg-bl text-white" : "bg-gray-200 text-black"}`}
+          className={`px-4 py-2 rounded-lg hover:bg-bl hover:text-blc font-sans font-semibold max-sm:text-xs max-sm:px-2 ${
+            activeTab === tab.value
+              ? "bg-bl text-white"
+              : "bg-gray-200 text-black"
+          }`}
           onClick={() => setActiveTab(tab.value)}
         >
           {tab.label}

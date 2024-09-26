@@ -1,11 +1,15 @@
-import './App.css';
-import { Accueil } from './components/Accueil';
+import React from "react";
+import "./App.css";
+import { Accueil } from "./components/Accueil";
+import { TaskProvider } from "./context/TaskContext";
 
 function App() {
   return (
-    <div className="App">
-      <Accueil/>
-    </div>
+    <TaskProvider>
+      <div className="">
+        <Accueil />
+      </div>
+    </TaskProvider>
   );
 }
 

@@ -6,17 +6,18 @@ import { LuArchiveRestore } from "react-icons/lu";
 import { MdDeleteForever } from "react-icons/md";
 import { PiArchiveBold, PiDotsThreeVerticalBold } from "react-icons/pi";
 import { RiProgress5Line } from "react-icons/ri";
+import { useTaskContext } from "../context/TaskContext";
 
-export const TaskActions = ({
-  task,
-  handleEditTask,
-  handleTaskStatus,
-  handleArchiveTask,
-  handleUnarchiveTask,
-  handleDeleteTask,
-}) => {
+export const TaskActions = ({ task }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const {
+    handleEditTask,
+    handleTaskStatus,
+    handleArchiveTask,
+    handleUnarchiveTask,
+    handleDeleteTask,
+  } = useTaskContext();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
